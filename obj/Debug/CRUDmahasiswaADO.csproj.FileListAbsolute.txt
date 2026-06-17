@@ -1,0 +1,10 @@
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\bin\Debug\CRUDmahasiswaADO.exe.config
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\bin\Debug\CRUDmahasiswaADO.exe
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\bin\Debug\CRUDmahasiswaADO.pdb
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\obj\Debug\CRUDmahasiswaADO.csproj.AssemblyReference.cache
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\obj\Debug\CRUDmahasiswaADO.Form1.resources
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\obj\Debug\CRUDmahasiswaADO.Properties.Resources.resources
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\obj\Debug\CRUDmahasiswaADO.csproj.GenerateResource.cache
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\obj\Debug\CRUDmahasiswaADO.csproj.CoreCompileInputs.cache
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\obj\Debug\CRUDmahasiswaADO.exe
+D:\SEMESTER 4\PABD\Pertemuan_6\CRUDmahasiswaADO\obj\Debug\CRUDmahasiswaADO.pdb
