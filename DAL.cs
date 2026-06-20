@@ -292,3 +292,28 @@ namespace CRUDmahasiswaADO
                 if (conn.State == ConnectionState.Open) conn.Close();
             }
         }
+
+
+        public void InsertLog(string message)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed) conn.Open();
+                using (var cmd = new SqlCommand("dbo.sp_LogMessage", conn))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.Parameters.AddWithValue("@psn", message ?? string.Empty);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+            catch
+            {
+                // Fallback local file logging if database logging fails
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open) conn.Close();
+            }
+        }
+    }
+}
