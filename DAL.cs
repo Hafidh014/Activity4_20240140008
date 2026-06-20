@@ -201,3 +201,25 @@ namespace CRUDmahasiswaADO
                 if (conn.State == ConnectionState.Open) conn.Close();
             }
         }
+
+
+        public void DeleteMhs(string nim)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                SqlCommand cmd = new SqlCommand("sp_DeleteMahasiswa", conn);
+                cmd.Parameters.AddWithValue("pNIM", nim);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open) conn.Close();
+            }
+        }
