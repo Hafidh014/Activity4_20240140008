@@ -146,3 +146,23 @@ namespace CRUDmahasiswaADO
 
                 // PERBAIKAN DI SINI: Diubah dari pNmProdi menjadi pKodeProdi sesuai Stored Procedure SQL Server
                 command.Parameters.AddWithValue("pKodeProdi", kodeProdi);
+
+                // Menangani parameter foto jika bernilai null (saat import file excel)
+                if (foto == null)
+                    command.Parameters.Add("pFoto", SqlDbType.VarBinary, -1).Value = DBNull.Value;
+                else
+                    command.Parameters.AddWithValue("pFoto", foto);
+
+                command.ExecuteNonQuery();
+                trans.Commit();
+            }
+            catch (Exception ex)
+            {
+                trans.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                conn.Close();
+            }
+        }
