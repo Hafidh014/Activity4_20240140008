@@ -186,3 +186,18 @@ namespace CRUDmahasiswaADO
                 command.Parameters.AddWithValue("pJenisKelamin", jenisKelamin);
                 command.Parameters.AddWithValue("pTanggalLahir", tanggalLahir);
 
+
+                command.Parameters.AddWithValue("pKodeProdi", kodeProdi);
+
+                if (foto == null)
+                    command.Parameters.Add("pFoto", SqlDbType.VarBinary, -1).Value = DBNull.Value;
+                else
+                    command.Parameters.AddWithValue("pFoto", foto);
+
+                command.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (conn.State == ConnectionState.Open) conn.Close();
+            }
+        }
