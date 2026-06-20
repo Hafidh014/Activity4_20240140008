@@ -19,12 +19,12 @@ namespace CRUDmahasiswaADO
         SqlDataAdapter da;
         DataTable dtMahasiswa;
         DataTable dtProdi;
+        DataMahasiswa DataMahasiswa = new DataMahasiswa();
 
         public Form2()
         {
             InitializeComponent();
         }
-
         private void Form2_Load(object sender, EventArgs e)
         {
             // 1. Konfigurasi DateTimePicker (hanya menampilkan Tahun)
@@ -63,6 +63,14 @@ namespace CRUDmahasiswaADO
             {
                 MessageBox.Show("Gagal load data: " + ex.Message);
             }
+            finally
+            {
+                // FIX 5: Tutup koneksi di Form2_Load yang sebelumnya tidak ditutup
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -100,6 +108,22 @@ namespace CRUDmahasiswaADO
             {
                 MessageBox.Show("Gagal load data: " + ex.Message);
             }
+            finally
+            {
+                // FIX 4 (sama): Pastikan koneksi selalu ditutup
+                if (conn.State == ConnectionState.Open)
+                {
+                    conn.Close();
+                }
+            }
+        }
+
+        private void btnCetak_Click(object sender, EventArgs e)
+        {
+            Form3 frm3 = new Form3(cmbProdi.SelectedValue.ToString(), dtpTanggalMasuk.Value);
+
+            frm3.Show();      // Tampilkan Form 3
+            this.Hide();
         }
     }
 }
