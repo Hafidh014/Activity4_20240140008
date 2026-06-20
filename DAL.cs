@@ -166,3 +166,23 @@ namespace CRUDmahasiswaADO
                 conn.Close();
             }
         }
+
+
+        public void UpdateMhs(string nim, string nama, string alamat, string jenisKelamin, DateTime tanggalLahir, string kodeProdi, byte[] foto)
+        {
+            try
+            {
+                if (conn.State == ConnectionState.Closed)
+                {
+                    conn.Open();
+                }
+
+                SqlCommand command = new SqlCommand("sp_UpdateMahasiswa", conn);
+                command.CommandType = CommandType.StoredProcedure;
+
+                command.Parameters.AddWithValue("pNIM", nim);
+                command.Parameters.AddWithValue("pNama", nama);
+                command.Parameters.AddWithValue("pAlamat", alamat);
+                command.Parameters.AddWithValue("pJenisKelamin", jenisKelamin);
+                command.Parameters.AddWithValue("pTanggalLahir", tanggalLahir);
+
