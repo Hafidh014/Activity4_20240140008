@@ -142,3 +142,7 @@ namespace CRUDmahasiswaADO
                 command.Parameters.AddWithValue("pAlamat", alamat);
                 command.Parameters.AddWithValue("pTanggalLahir", tanggalLahir);
                 command.Parameters.AddWithValue("pJenisKelamin", jenisKelamin);
+
+
+                // PERBAIKAN DI SINI: Diubah dari pNmProdi menjadi pKodeProdi sesuai Stored Procedure SQL Server
+                command.Parameters.AddWithValue("pKodeProdi", kodeProdi);
