@@ -73,7 +73,7 @@ namespace CRUDmahasiswaADO
                 }
             }
 
-            public DataTable getAllDataCharT()
+            public DataTable getAllDataChart()
             {
                 try
                 {
